@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Counter from "./components/Counter";
+import InputDisplay from "./components/InputDisplay";
+import PropTricks from "./components/PropTricks";
+import data from "./data";
+import RenderArray from "./components/RenderArray";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const tricksprops = {
+    cheese: "gouda",
+    bread: "rye",
+    vegetable: "turnip",
+    dessert: "bread pudding"
+  }
+
+  console.log("App Rendered")
+  return <>
+  <Counter/>
+  <InputDisplay/>
+  <PropTricks 
+    {...tricksprops}
+  />
+  <RenderArray data={data}/>
+  </>
+
 }
 
 export default App;
